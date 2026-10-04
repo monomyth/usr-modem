@@ -1,0 +1,251 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  color: #2b261f;
+  background:
+    radial-gradient(900px 520px at 50% 18%, rgba(255, 252, 246, 0.9), transparent 70%),
+    linear-gradient(180deg, #f4efe6 0%, #e4dccf 100%);
+}
+
+.desk {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.stage {
+  width: min(calc(750px + 22.67rem + 2rem), 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pair {
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+  width: 100%;
+}
+
+.mast {
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: "Geneva", "Helvetica Neue", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8a7b68;
+}
+
+.mast h1 {
+  margin: 0.3rem 0 0.35rem;
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.status-bar {
+  min-height: 1.3rem;
+  margin: 0;
+  font-family: "Geneva", "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: #6d624f;
+}
+
+.start-panel {
+  display: flex;
+  justify-content: flex-end;
+  flex: none;
+}
+
+.modem-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.modem-figure {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.modem-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 18px 22px rgba(55, 36, 16, 0.26));
+}
+
+.console {
+  width: 22.67rem;
+  flex: none;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: transparent;
+  /* No overflow clipping here. Safari will not start audio from a click
+     inside an overflow:hidden ancestor. */
+  box-shadow: 0 16px 36px rgba(70, 48, 24, 0.14);
+}
+
+.console-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 2.6rem;
+  padding: 0.45rem 0.55rem 0.45rem 0.9rem;
+  background: #2a2521;
+  border-radius: 14px 14px 0 0;
+  box-shadow: inset 0 1px 0 rgba(255, 248, 236, 0.08);
+}
+
+.console-title {
+  font-family: "Geneva", "Helvetica Neue", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #b7aa98;
+}
+
+.start-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  background: #f3ecdf;
+  color: #2b261f;
+  font-family: "Geneva", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background: #fffaf2;
+}
+
+.start-btn.is-live {
+  background: #8d2b28;
+  color: #fff7f4;
+  box-shadow: 0 8px 18px rgba(90, 24, 20, 0.22);
+}
+
+.start-btn.is-live:hover {
+  background: #a53430;
+}
+
+.start-btn:focus-visible {
+  outline: 2px solid #e4c27a;
+  outline-offset: 2px;
+}
+
+/*
+ * Indicator windows on sportster-product.jpg (750×509).
+ * Centers are the dark lenses. The row slopes up to the right in perspective.
+ * The physical panel is AA CD RD SD TR CS ARQ/FAX — CS has no sim LED.
+ */
+.modem-figure .led {
+  position: absolute;
+  width: 3.2%;
+  height: 2.3%;
+  border-radius: 1px;
+  background: transparent;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-19deg);
+  transform-origin: center center;
+  z-index: 1;
+}
+
+.modem-figure .led.on {
+  background: #3dff3a;
+  box-shadow:
+    0 0 2px 1px rgba(40, 255, 70, 0.95),
+    0 0 6px 1px rgba(20, 180, 40, 0.55);
+}
+
+#led-aa  { left: 43.13%; top: 67.68%; width: 3.36%; height: 2.40%; }
+#led-cd  { left: 48.67%; top: 64.64%; width: 3.20%; height: 2.36%; }
+#led-rd  { left: 54.07%; top: 61.69%; width: 3.07%; height: 2.28%; }
+#led-sd  { left: 59.27%; top: 58.74%; width: 3.07%; height: 2.20%; }
+#led-tr  { left: 64.47%; top: 56.09%; width: 2.85%; height: 2.16%; }
+#led-arq { left: 74.20%; top: 50.69%; width: 3.07%; height: 2.16%; }
+
+.activity-log {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  margin: 0;
+  border-radius: 0 0 14px 14px;
+  padding: 0.75rem 0.95rem 0.9rem;
+  background: #161311;
+  font-family: ui-monospace, "SF Mono", "Monaco", "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #b7e2b0;
+  scrollbar-color: #4a433c transparent;
+}
+
+.activity-log:empty::before {
+  content: "Waiting for the dial command.";
+  color: #6f675e;
+}
+
+.activity-log .line { margin: 0; }
+.activity-log .line.tx { color: #e6d39a; }
+.activity-log .line.rx { color: #9fd4e4; }
+.activity-log .line.sys { color: #b7e2b0; }
+
+@media (max-width: 960px) {
+  .desk {
+    padding: 1.5rem 0.85rem 2rem;
+  }
+
+  .stage {
+    width: 100%;
+  }
+
+  .pair {
+    flex-direction: column;
+  }
+
+  .console {
+    width: min(22.67rem, 100%);
+    align-self: flex-start;
+    height: auto;
+  }
+
+  .activity-log {
+    min-height: 9.5rem;
+  }
+
+  .console-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .start-btn {
+    width: 100%;
+  }
+}

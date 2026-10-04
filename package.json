@@ -1,0 +1,13 @@
+{
+  "name": "usr-modem",
+  "version": "1.0.0",
+  "private": true,
+  "description": "US Robotics 14400 dial-up modem simulator",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "test:playwright": "node tests/playwright-launch.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}

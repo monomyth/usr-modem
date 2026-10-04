@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U.S. Robotics Sportster 14,400 Faxmodem</title>
+  <link rel="stylesheet" href="css/modem.css?v=8">
+</head>
+<body>
+  <main class="desk">
+    <div class="stage">
+      <header class="mast">
+        <p class="eyebrow">U.S. Robotics</p>
+        <h1>Sportster 14,400</h1>
+        <p id="status-bar" class="status-bar" aria-live="polite">Ready — click Connect to dial.</p>
+      </header>
+
+      <div class="pair">
+      <div class="modem-stage">
+        <figure class="modem-figure" id="modem" role="img" aria-label="U.S. Robotics Sportster 14,400 Faxmodem">
+          <img
+            class="modem-photo"
+            src="assets/sportster-cutout.png"
+            width="750"
+            height="509"
+            alt="U.S. Robotics Sportster 14,400 Faxmodem"
+          >
+          <!-- LEDs aligned to indicator wells on the purple front band -->
+          <span class="led" id="led-aa" data-label="AA" title="AA"></span>
+          <span class="led" id="led-cd" data-label="CD" title="CD"></span>
+          <span class="led" id="led-rd" data-label="RD" title="RD"></span>
+          <span class="led" id="led-sd" data-label="SD" title="SD"></span>
+          <span class="led on" id="led-tr" data-label="TR" title="TR"></span>
+          <span class="led" id="led-arq" data-label="ARQ" title="ARQ"></span>
+        </figure>
+      </div>
+
+      <section class="console" aria-label="Terminal session">
+        <div class="console-bar">
+          <span class="console-title">Terminal</span>
+          <div id="start-panel" class="start-panel">
+            <button id="start-btn" class="start-btn" type="button">Connect at 14,400 bps</button>
+          </div>
+        </div>
+        <div id="activity-log" class="activity-log" aria-label="Connection activity log"></div>
+      </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/modem-sim-core.js?v=3"></script>
+  <script src="js/modem-audio.js?v=8"></script>
+  <script src="js/modem-ui.js?v=3"></script>
+  <script src="js/modem-app.js?v=8"></script>
+</body>
+</html>
